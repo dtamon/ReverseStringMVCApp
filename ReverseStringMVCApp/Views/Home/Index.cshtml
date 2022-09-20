@@ -1,0 +1,21 @@
+﻿@model ReverseStringMVCApp.Models.StringModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="row">
+        @using(Html.BeginForm("Index", "Home", FormMethod.Post)){
+            <div class="form-group">
+                <label for="name">String to reverse</label>
+                <input type="text" class="form-control" id="toReverse" name="toReverse" value="@Model.ToReverse" />
+            </div>
+            <div class="form-group">
+                <label for="name">Reversed string</label>
+                <input type="text" class="form-control" id="reversed" name="reversed" value="@Model.Reversed" />
+            </div>
+            <button type="submit" class="btn btn-info" id="reverse" value="reverse">Reverse</button>
+        }
+    </div>
+</div>
